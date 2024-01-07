@@ -1,13 +1,235 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/*------------------  Global  ------------------*/
+:root {
+	/*  App Colors	*/
+	--color-navbar: #0e0e0e;
+	--color-background: #212121;
+	--color-background-sub: #424242;
+	--color-button: #2563eb;
+	--color-button-hover: #1945a4;
+	--color-text: white;
+	--color-text-sub: #9e9e9e;
+
+
+	/*  Font  */
+	--font-size: 16px;
+
+
+
+
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+html {
+	scroll-behavior: smooth;
 }
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  sans-serif;
+	color: var(--color-text)
+
+}
+
+div, h1, h3 {
+	margin: 0;
+}
+
+a {
+	text-decoration: none;
+	color: var(--color-text)
+}
+
+
+/*------------------  Layout  ------------------*/
+.layout {
+	display: flex;
+  min-height: 100vh;
+	min-width: 100vw;
+	text-align: center;
+	background-color: var(--color-background);
+	position: relative;
+}
+
+
+/*------------------  Navbar  ------------------*/
+.navbar {
+	width: 150px;
+	min-width: 150px;
+	max-height: 100vh;
+	border-right: 1px solid #424242;
+	position: sticky;
+	top: 0;
+}
+
+.navbar__box {
+	position: sticky;
+	top: 10px;
+}
+
+.navbar__title {
+	position: fixed;
+	top: 25px;
+	left: 33px;
+}
+
+.navbar__box {
+	height: 100%;
+	padding: 1px;
+}
+
+.navbar__box__button {
+	display: block;
+	color: var(--color-text);
+	background-color: var(--color-button);
+  width: 80%;
+  height: 48px;
+  cursor: pointer;
+  font-size: var(--font-size);
+	border: none;
+	border-radius: 10px;
+}
+
+.navbar__box button {
+	margin: 10px auto 0 auto;
+	/*position: sticky;*/
+	/*top: 100px;*/
+}
+
+.navbar__box button:nth-child(1) {
+	margin-top: 100px;
+}
+
+.navbar__box button:nth-last-child(1) {
+	position: absolute;
+	right: 0;
+	left: 0;
+	bottom: 50px;
+}
+
+.navbar__box button:hover {
+	background-color: var(--color-button-hover);
+}
+
+/*------------------  Utility form  ------------------*/
+.utility-box {
+	width: 300px;
+	min-width: 300px;
+	max-height: 100vh;
+	border-right: 1px solid #424242;
+	position: sticky;
+	top: 0;
+}
+
+
+.utility-box__form {
+	margin-top: 100px;
+}
+
+.utility-box__form__input {
+	display: block;
+	width: 80%;
+	height: 48px;
+	margin: 0 auto 0 auto;
+	padding: 10px;
+	border: 1px solid #424242;
+	border-radius: 10px;
+	background-color: var(--color-background-sub);
+	font-size: var(--font-size);
+	color: var(--color-text);
+}
+
+.utility-box__form__input:focus {
+	outline: none;
+}
+
+.utility-box__form__input::placeholder {
+	color: var(--color-text-sub);
+}
+
+.utility-box__form__button {
+	height: 28px;
+	width: 80%;
+	margin: 10px auto 0 auto;
+}
+
+.utility-box__form__button:hover {
+	background-color: var(--color-button-hover);
+}
+
+/*------------------  Contents  ------------------*/
+.contents {
+	flex-grow: 1;
+	position: relative;
+	overflow: hidden;
+
+}
+
+.contents__title {
+	position: absolute;
+	left: 0;
+	right: 0;
+}
+
+.contents__box {
+	margin: 50px auto 0 auto;
+	width: 90%;
+}
+
+.contents__box__shop {
+	margin-bottom: 30px;
+}
+
+
+.contents__box__shop-name {
+	text-align: left;
+}
+
+.contents__box__shop-cart {
+	display: flex;
+	gap: 10px;
+	padding: 10px 10px 15px 10px;
+	border: 1px solid #424242;
+	border-radius: 10px;
+	margin-top: 10px;
+	overflow: auto;
+	white-space: nowrap;
+
+}
+.contents__box__shop_cart-item {
+	border: 1px solid #424242;
+	border-radius: 10px;
+	padding: 5px;
+	min-width: 180px;
+	max-width: 180px;
+	height: 250px;
+}
+
+.contents__box__shop_cart-item-image {
+	object-fit: cover;
+	width: 100%;
+	height: 125px;
+
+}
+
+.contents__box__shop_cart-item__info {
+	text-align: left;
+}
+
+.contents__box__shop_cart-item__info-title {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: normal;
+	display: -webkit-box;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+	color: #80a6ff;
+}
+
+
+
+
