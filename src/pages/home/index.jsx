@@ -1,6 +1,6 @@
-import Navbar from "../../components/Navbar";
-import UtilityBox from "../../components/UtilityBox";
-import Contents from "../../components/Contents";
+import Navbar from "../../components/default/Navbar";
+import UtilityBox from "../../components/default/UtilityBox";
+import Contents from "../../components/default/Contents";
 
 export default function HomePage() {
   return (

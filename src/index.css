@@ -4,18 +4,17 @@
 	--color-navbar: #0e0e0e;
 	--color-background: #212121;
 	--color-background-sub: #424242;
+	--color-background-contents: #222527;
+	--color-background-utilbox: #191a1b;
+	--color-background-nav: #101010;
 	--color-button: #2563eb;
 	--color-button-hover: #1945a4;
 	--color-text: white;
 	--color-text-sub: #9e9e9e;
-
+	--color-btn-active: #383b3e;
 
 	/*  Font  */
 	--font-size: 16px;
-
-
-
-
 }
 
 html {
@@ -44,7 +43,6 @@ a {
 	color: var(--color-text)
 }
 
-
 /*------------------  Layout  ------------------*/
 .layout {
 	display: flex;
@@ -58,26 +56,17 @@ a {
 
 /*------------------  Navbar  ------------------*/
 .navbar {
-	width: 150px;
-	min-width: 150px;
+	min-width: 65px;
 	max-height: 100vh;
 	border-right: 1px solid #424242;
 	position: sticky;
 	top: 0;
+	background-color: var(--color-background-nav);
 }
 
 .navbar__box {
 	position: sticky;
 	top: 10px;
-}
-
-.navbar__title {
-	position: fixed;
-	top: 25px;
-	left: 33px;
-}
-
-.navbar__box {
 	height: 100%;
 	padding: 1px;
 }
@@ -85,11 +74,11 @@ a {
 .navbar__box__button {
 	display: block;
 	color: var(--color-text);
-	background-color: var(--color-button);
+	background-color: var(--color-background-nav);
   width: 80%;
   height: 48px;
   cursor: pointer;
-  font-size: var(--font-size);
+  font-size: 25px;
 	border: none;
 	border-radius: 10px;
 }
@@ -100,19 +89,26 @@ a {
 	/*top: 100px;*/
 }
 
-.navbar__box button:nth-child(1) {
-	margin-top: 100px;
+.navbar__box button:nth-last-child(2) {
+	position: absolute;
+	right: 0;
+	left: 0;
+	bottom: 90px;
 }
 
 .navbar__box button:nth-last-child(1) {
 	position: absolute;
 	right: 0;
 	left: 0;
-	bottom: 50px;
+	bottom: 30px;
 }
 
 .navbar__box button:hover {
-	background-color: var(--color-button-hover);
+	background-color: var(--color-background-utilbox);
+}
+
+.btn-active {
+	background-color: var(--color-btn-active);
 }
 
 /*------------------  Utility form  ------------------*/
@@ -120,25 +116,46 @@ a {
 	width: 300px;
 	min-width: 300px;
 	max-height: 100vh;
-	border-right: 1px solid #424242;
 	position: sticky;
 	top: 0;
+	background-color: var(--color-background-utilbox);
+}
+
+.utility-box__title {
+	display: flex;
+	justify-content: center;
+	width: 90%;
+	margin: 15px auto 0 auto;
+	font-size: 20px;
+	font-weight: bold;
+	color: var(--color-text-sub);
+}
+
+.utility-box__title .invisible_box {
+	flex-grow: 1;
+}
+
+.utility-box__title .close {
+	cursor: pointer;
+	font-size: 28px;
 }
 
 
+
+
 .utility-box__form {
-	margin-top: 100px;
+	margin-top: 20px;
 }
 
 .utility-box__form__input {
 	display: block;
-	width: 80%;
-	height: 48px;
+	width: 90%;
+	height: 28px;
 	margin: 0 auto 0 auto;
 	padding: 10px;
-	border: 1px solid #424242;
+	border: none;
 	border-radius: 10px;
-	background-color: var(--color-background-sub);
+	background-color: var(--color-background-contents);
 	font-size: var(--font-size);
 	color: var(--color-text);
 }
@@ -149,16 +166,22 @@ a {
 
 .utility-box__form__input::placeholder {
 	color: var(--color-text-sub);
+	font-size: 13px;
 }
 
 .utility-box__form__button {
 	height: 28px;
-	width: 80%;
+	width: 90%;
 	margin: 10px auto 0 auto;
+	border: none;
+	border-radius: 10px;
+	cursor: pointer;
+	background-color: var(--color-background-nav);
+	color: var(--color-text);
 }
 
 .utility-box__form__button:hover {
-	background-color: var(--color-button-hover);
+	background-color: var(--color-background-contents);
 }
 
 /*------------------  Contents  ------------------*/
@@ -166,24 +189,19 @@ a {
 	flex-grow: 1;
 	position: relative;
 	overflow: hidden;
-
-}
-
-.contents__title {
-	position: absolute;
-	left: 0;
-	right: 0;
+	background-color: var(--color-background-contents);
 }
 
 .contents__box {
-	margin: 50px auto 0 auto;
+	margin: 0 auto 0 auto;
 	width: 90%;
+	height: 100%;
+	padding-top: 1px;
 }
 
 .contents__box__shop {
-	margin-bottom: 30px;
+	margin: 30px 0 30px 0;
 }
-
 
 .contents__box__shop-name {
 	text-align: left;
@@ -193,31 +211,33 @@ a {
 	display: flex;
 	gap: 10px;
 	padding: 10px 10px 15px 10px;
-	border: 1px solid #424242;
+	border: 1px solid #aec7ec;
 	border-radius: 10px;
 	margin-top: 10px;
 	overflow: auto;
 	white-space: nowrap;
+	height: 280px;
 
 }
 .contents__box__shop_cart-item {
-	border: 1px solid #424242;
 	border-radius: 10px;
-	padding: 5px;
 	min-width: 180px;
 	max-width: 180px;
-	height: 250px;
+	height: 240px;
+	background-color: var(--color-background-utilbox);
+	overflow: hidden;
 }
 
 .contents__box__shop_cart-item-image {
 	object-fit: cover;
 	width: 100%;
 	height: 125px;
-
 }
 
 .contents__box__shop_cart-item__info {
 	text-align: left;
+	padding: 5px 10px 5px 10px;
+	line-height: 1.5;
 }
 
 .contents__box__shop_cart-item__info-title {
@@ -228,6 +248,16 @@ a {
 	-webkit-line-clamp: 2;
 	-webkit-box-orient: vertical;
 	color: #80a6ff;
+}
+
+
+/* default box */
+.default__box__title {
+	margin-top: 40vh;
+}
+
+.default__box__title p {
+	color: var(--color-text-sub);
 }
 
 
