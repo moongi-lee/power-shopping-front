@@ -6,6 +6,10 @@ export default function Router() {
       <>
         <Routes>
           <Route path="/" element={<HomePage/>}/>
+          <Route path="/cart" element={<HomePage/>}/>
+          <Route path="/gpt" element={<HomePage/>}/>
+          <Route path="/account" element={<HomePage/>}/>
+          <Route path="/setting" element={<HomePage/>}/>
         </Routes>
       </>
   )

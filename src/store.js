@@ -1,18 +1,48 @@
 import {configureStore, createSlice} from '@reduxjs/toolkit'
 
-let test_state = createSlice({
-  name: 'test',
-  initialState: 'test_good',
-})
-
 const contentsBoxState = createSlice({
   name: 'contentsBoxState',
   initialState: 'default',
+  reducers : {
+    changeContentsBoxState: (state, action) => {
+      state = action.payload
+      return state
+    }
+  }
 })
+
+const utilityState = createSlice({
+  name: 'utilityState',
+  initialState: 'search',
+  reducers : {
+    changeUtilityState: (state, action) => {
+      state = action.payload
+      return state
+    }
+  }
+})
+
+const keywordState = createSlice({
+  name: 'keywordState',
+  initialState: '',
+  reducers : {
+    changeKeywordState: (state, action) => {
+      state = action.payload
+      return state
+    }
+  }
+})
+
 
 
 export default configureStore({
   reducer: {
-    test: test_state.reducer,
-  }
-})
+    contentsBoxState: contentsBoxState.reducer,
+    utilityState: utilityState.reducer,
+    keywordState: keywordState.reducer,
+  },
+});
+
+export let { changeContentsBoxState } = contentsBoxState.actions;
+export let { changeUtilityState } = utilityState.actions;
+export let { changeKeywordState } = keywordState.actions;
