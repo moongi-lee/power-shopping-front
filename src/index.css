@@ -57,22 +57,27 @@ a {
 /*------------------  Navbar  ------------------*/
 .navbar {
 	min-width: 65px;
+	max-width: 65px;
+	min-height: 100vh;
 	max-height: 100vh;
 	border-right: 1px solid #424242;
 	position: sticky;
 	top: 0;
 	background-color: var(--color-background-nav);
+	padding-top: 1px;
 }
 
 .navbar__box {
-	position: sticky;
-	top: 10px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 	height: 100%;
-	padding: 1px;
+	padding: 10px 0 10px 0;
+	gap: 10px;
 }
 
 .navbar__box__button {
-	display: block;
 	color: var(--color-text);
 	background-color: var(--color-background-nav);
   width: 80%;
@@ -83,24 +88,12 @@ a {
 	border-radius: 10px;
 }
 
+.invisible_box-nav {
+	flex-grow: 1;
+}
+
 .navbar__box button {
-	margin: 10px auto 0 auto;
-	/*position: sticky;*/
-	/*top: 100px;*/
-}
-
-.navbar__box button:nth-last-child(2) {
-	position: absolute;
-	right: 0;
-	left: 0;
-	bottom: 90px;
-}
-
-.navbar__box button:nth-last-child(1) {
-	position: absolute;
-	right: 0;
-	left: 0;
-	bottom: 30px;
+	/*margin: 10px auto 0 auto;*/
 }
 
 .navbar__box button:hover {

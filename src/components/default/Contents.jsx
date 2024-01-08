@@ -7,7 +7,10 @@ export default function Contents() {
       <>
         <div className="contents">
           <div className="contents__box">
-            <CoupangBox />
+            {
+              [...Array(10)].map((_, i) => <CoupangBox i={i+1}/>)
+            }
+            {/*<CoupangBox />*/}
             {/*<DefaultBox />*/}
           </div>
         </div>

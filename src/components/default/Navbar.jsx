@@ -16,11 +16,11 @@ export default function Navbar() {
               <button className="navbar__box__button btn-active" onClick={()=>{navigate("/")}}><RxMagnifyingGlass /></button>
               <button className="navbar__box__button" onClick={()=>{navigate("/")}}><BsCart2 /></button>
               <button className="navbar__box__button" onClick={()=>{navigate("/")}}><PiBrain /></button>
+              <div className="invisible_box-nav"></div>
               <button className="navbar__box__button" onClick={()=>{navigate("/")}}><MdAccountCircle /></button>
               <button className="navbar__box__button" onClick={()=>{navigate("/")}}><IoSettingsOutline /></button>
           </div>
         </div>
-        
       </>
   )
 }
