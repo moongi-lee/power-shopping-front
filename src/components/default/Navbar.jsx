@@ -5,14 +5,19 @@ import { IoSettingsOutline } from "react-icons/io5";
 import { MdAccountCircle } from "react-icons/md";
 import { PiBrain } from "react-icons/pi";
 import { useDispatch, useSelector } from "react-redux";
-import { changeUtilityState } from "../../store";
+import { changeUtilityState, changeUtilityBoxState } from "../../store";
+
 
 
 export default function Navbar() {
   let dispatch = useDispatch();
+  let utilityBoxState = useSelector(state => state.utilityBoxState)
+  let UtilityState = useSelector(state => state.utilityState)
 
   const onClick = (e) => {
     let button_list, button;
+
+    // button active state 변경
     if (e.target.tagName === 'path') {
       button_list = e.target.parentElement.parentElement.parentElement.childNodes;
       button = e.target.parentElement.parentElement
@@ -28,7 +33,7 @@ export default function Navbar() {
     })
     button.classList.add('btn-active')
 
-
+    // utilityBox page 변경
     const { name, value } = button;
     if (name === 'search') {
       dispatch(changeUtilityState(value))
@@ -40,6 +45,15 @@ export default function Navbar() {
       dispatch(changeUtilityState(value))
     } else if (name === 'setting') {
       dispatch(changeUtilityState(value))
+    }
+
+    // utilityBox visible state 변경
+    if (utilityBoxState === 'invisible') {
+      dispatch(changeUtilityBoxState('visible'))
+    } else if (utilityBoxState === 'visible' && UtilityState === name) {
+      dispatch(changeUtilityBoxState('invisible'))
+    } else {
+      dispatch(changeUtilityBoxState('visible'))
     }
   }
 

@@ -16,13 +16,26 @@ export default function UtilityBox() {
     'account': <Account/>,
     'setting': <Setting/>,
   }
+  let utilityBoxState = useSelector(state => state.utilityBoxState)
+
+
   return (
       <>
-        <div className="utility-box">
-          {
-            utilityObj[utilityState]
-          }
-        </div>
+        {
+          utilityBoxState !== 'invisible' ? (
+              <div className="utility-box">
+            {
+              utilityObj[utilityState]
+            }
+              </div>
+          ) : (
+              <div className="utility-box-invisible">
+                {
+                  utilityObj[utilityState]
+                }
+              </div>
+          )
+        }
       </>
   )
 }

@@ -115,7 +115,20 @@ a {
 	position: sticky;
 	top: 0;
 	background-color: var(--color-background-utilbox);
+	transition: all 1s ease-in-out;
 }
+
+.utility-box-invisible {
+	width: 300px;
+	min-width: 300px;
+	max-height: 100vh;
+	position: absolute;
+	top: 0;
+	left: -300px;
+	background-color: var(--color-background-utilbox);
+	transition: all 1s ease-in-out;
+}
+
 
 .utility-box__title {
 	display: flex;
@@ -180,6 +193,13 @@ a {
 	background-color: var(--color-background-contents);
 }
 
+.utility-box__form__alert {
+	margin-top: 10px;
+	color: #ff5e5e;
+	font-size: 15px;
+}
+
+
 /*------------------  Contents  ------------------*/
 .contents {
 	flex-grow: 1;
@@ -194,6 +214,18 @@ a {
 	height: 100%;
 	padding-top: 1px;
 }
+
+.contents__box__close-btn {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	font-size: 30px;
+	font-weight: bold;
+	color: var(--color-text-sub);
+	cursor: pointer;
+	height: 30px;
+}
+
 
 .contents__box__shop {
 	margin: 30px 0 30px 0;
@@ -245,6 +277,9 @@ a {
 	-webkit-box-orient: vertical;
 	color: #80a6ff;
 }
+
+
+
 
 
 /* default box */
