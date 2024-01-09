@@ -46,6 +46,16 @@ export default function Search() {
 	const onClickClose = (e) => {
 		e.preventDefault();
 		dispatch(changeUtilityBoxState('invisible'))
+		 let button;
+    // utilitybox close
+    if (e.target.tagName === 'path') {
+      button = e.target.parentElement.parentElement.parentElement.parentElement;
+    } else if (e.target.tagName === 'svg') {
+      button = e.target.parentElement.parentElement.parentElement;
+    } else {
+      button = e.target.parentElement.parentElement;
+    }
+    button.classList.add('utility-box-invisible')
 	}
 
 

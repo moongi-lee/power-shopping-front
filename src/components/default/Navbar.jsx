@@ -48,12 +48,16 @@ export default function Navbar() {
     }
 
     // utilityBox visible state 변경
+    let parentButton =   button.parentElement.parentElement.parentElement
     if (utilityBoxState === 'invisible') {
       dispatch(changeUtilityBoxState('visible'))
+      parentButton.childNodes[1].classList.remove('utility-box-invisible')
     } else if (utilityBoxState === 'visible' && UtilityState === name) {
       dispatch(changeUtilityBoxState('invisible'))
+      parentButton.childNodes[1].classList.add('utility-box-invisible')
     } else {
       dispatch(changeUtilityBoxState('visible'))
+      parentButton.childNodes[1].classList.remove('utility-box-invisible')
     }
   }
 

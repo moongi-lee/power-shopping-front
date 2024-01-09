@@ -21,21 +21,11 @@ export default function UtilityBox() {
 
   return (
       <>
-        {
-          utilityBoxState !== 'invisible' ? (
-              <div className="utility-box">
-            {
-              utilityObj[utilityState]
-            }
-              </div>
-          ) : (
-              <div className="utility-box-invisible">
-                {
-                  utilityObj[utilityState]
-                }
-              </div>
-          )
-        }
+        <div className="utility-box">
+          {
+            utilityObj[utilityState]
+          }
+        </div>
       </>
   )
 }
